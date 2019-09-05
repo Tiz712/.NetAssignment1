@@ -1,0 +1,105 @@
+using System;
+
+
+namespace Loginsystem
+{
+    class Login
+    {
+
+        public static void Main(string[] args)
+
+        {
+            string userName, passWord;
+            
+            Console.Clear();
+            //Console.WriteLine("\t\t------------------------------------");
+            //Console.WriteLine("\t\t  WELCOME TO SIMPLE BANKING SYSTEM");
+            //Console.WriteLine("\t\t------------------------------------");
+            //Console.WriteLine("\t\t           LOGIN TO START");
+            //Console.WriteLine("\t\t------------------------------------");
+            //Console.WriteLine("\t\tUserName:");
+            //int CursorPosUserNameLeft = Console.CursorLeft;
+            //int CursorPosUserNameTop = Console.CursorTop;
+            //Console.WriteLine("\t\tPassword:");
+            //int CursorPosPwdLeft = Console.CursorLeft;
+            //int CursorPosPwdTop = Console.CursorTop;
+            //Console.WriteLine("\t\t------------------------------------");
+            //Console.SetCursorPosition(CursorPosUserNameLeft, CursorPosUserNameTop); ？？？？怎么设置position？？
+            //userName =Console.ReadLine();
+            Console.Clear();//刷新界面！！！
+            Console.WriteLine("\t\t------------------------------------");
+            Console.WriteLine("\t\t  WELCOME TO SIMPLE BANKING SYSTEM");
+            Console.WriteLine("\t\t------------------------------------");
+            Console.WriteLine("\t\t           LOGIN TO START");
+            Console.WriteLine("\t\t------------------------------------");
+            userName = Console.ReadLine();
+            Console.WriteLine("\t\tUserName: '{0}'",userName);
+            Console.WriteLine("\t\tPassword:");
+            //Console.SetCursorPosition(CursorPosPwdLeft, CursorPosPwdTop);
+
+            Console.WriteLine("\t\t------------------------------------");      //???? 怎么使跳转另外一页
+
+           string passWdChar = "*";//把password 变成***
+            
+            passWord = Console.ReadLine();
+           Console.WriteLine("\t\tPassword: '{0}'", passWdChar);
+            do
+            {
+                ConsoleKeyInfo ck = Console.ReadKey(true);
+                if (ck.Key != ConsoleKey.Enter)
+                {
+                    if (ck.Key != ConsoleKey.Backspace)
+                    {
+                        passWord += ck.KeyChar.ToString();
+                        Console.Write(passWdChar);
+                    }
+                    else if (ck.Key == ConsoleKey.Backspace && passWord.Length > 0)
+                    {
+                        //passWord = passWord.Substring(0, (passWord.Length - 1));
+                        //Console.Write("\t\tPassword: '{0}'", passWdChar);
+                        Console.Write("\b \b");//删除错误字符
+                    }
+                }
+                else
+                {
+                    Console.WriteLine();
+                    break;
+                }
+            }
+
+            while (true);
+            if (userName == "nabin" && passWord == "hello") //如何通过数据库查询
+                Console.WriteLine("\n\n \t\t Valid Credentials...");
+            else
+                Console.WriteLine("\n\n \t\t User not found!");///凭据无效重新输入 需要一个chatch ？如果凭据无效并且允许重新输入值，则显示相应的错误消息。
+
+
+
+        }
+    }//string
+    //{Console.Clear();//如何跳转去第二个界
+      //  Console.WriteLine("\t\t------------------------------------");
+        //Console.WriteLine("\t\t  WELCOME TO SIMPLE BANKING SYSTEM");
+        //Console.WriteLine("\t\t------------------------------------");
+        //Console.WriteLine("\t\t1. Create a new account");
+        //Console.WriteLine("\t\t2.Search for an account");
+        //Console.WriteLine("\t\t3.Deposit");
+        //Console.WriteLine("\t\t4.Withdraw");
+        //Console.WriteLine("\t\t5.A/C statement");
+        //Console.WriteLine("\t\t6.Delete account");
+        //Console.WriteLine("\t\t7.Exit")
+        //Console.WriteLine("\t\t------------------------------------");
+        //Console.WriteLine("\t\tEnter your choie(1-7)");
+        
+
+
+}
+    
+
+
+
+//如何存储进去数据库
+
+
+
+
